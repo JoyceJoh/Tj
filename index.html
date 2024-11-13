@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor Web App Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://i.ibb.co/XScqvcn/IMG-20241113-193258-960.jpg');
+            background-size: 100% 100%; /* Set to 100% width and height */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .login-container {
+            padding: 100px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            transition: margin-top 0.3s ease;
+        }
+
+        h1 {
+            color: purple;
+            margin-bottom: 20px;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 70%; 
+            box-sizing: border-box;
+            height: 40px; 
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 95px;
+            height: 45px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input:focus,
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-image: url('https://i.ibb.co/Lpc5V21/ic-launcher-round.jpg');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            transition: top 0.3s ease;
+        }
+
+        .circle.up {
+            top: -70px; /* Adjust this according to the required height */
+        }
+
+        .login-container.up {
+            margin-top: 150px; /* Adjust this according to the required height */
+        }
+
+        .circle-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px;
+            z-index: 2;
+        }
+
+        .circle-button.left {
+            left: 50px;
+            background-image: url('https://i.ibb.co/5FPGSh2/YTLogo-old-new-animation.gif');
+        }
+
+        .circle-button.right {
+            right: 50px;
+            background-image: url('https://i.ibb.co/Gcs24BM/images-30.jpg');
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            animation: blink 1s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% { 
+            opacity: 1; transform: scale(1); 
+            }
+            100% { 
+            opacity: 0; transform: scale(0.95); 
+            }
+        }
+
+        .login-container.fade-out {
+            animation: fadeOut 4s forwards;
+        }
+
+        swf {
+            color: #e0f;
+            font-size: 4em;
+            font-weight: 1000;
+            text-align: center;
+        }
+
+        marquee {
+            color: #0ef;
+            width: 100%;
+            font-weight: 1000;
+            position: absolute;
+            top: 0;
+        }
+
+        s {
+            color: #e0f;
+            font-size: 2em;
+            font-weight: 1000;
+            padding-right: 1px;
+        }
+    </style>
+</head>
+<body>
+    <marquee><swf>X</swf><s>.....KING........HACK.</s></marquee> 
+    <div class="login-container">
+        <div class="circle"></div>
+        <form id="loginForm" class="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <div id="errorMessage" class="error-message"></div>
+        </form>
+    </div>
+
+    <button class="circle-button left" onclick="window.location.href='https://www.youtube.com/@KH-Hi_1XBET1'"></button>
+    <button class="circle-button right" onclick="window.location.href='https://t.me/xkinghackHi1xbet'"></button>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Trigger the animation
+            document.querySelector('.login-container').classList.add('fade-out');
+
+            setTimeout(function() {
+                if (username === 'KINGHACK' && password === 'HACKTHIM11') {
+                    window.location.href = 'code1.html'; // Replace with the name of the HTML page you want to redirect to
+                } else {
+                    errorMessage.textContent = 'Incorrect Password';
+                    document.querySelector('.login-container').classList.remove('fade-out');
+                }
+            }, 4000);
+        });
+
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                document.querySelector('.circle').classList.add('up');
+                document.querySelector('.login-container').classList.add('up');
+            });
+
+            input.addEventListener('blur', function() {
+                setTimeout(function() {
+                    if (!document.querySelector('input:focus')) {
+                        document.querySelector('.circle').classList.remove('up');
+                        document.querySelector('.login-container').classList.remove('up');
+                    }
+                }, 100); // Slight delay to ensure user has stopped typing
+            });
+        });
+    </script>
+</body>
+</html>
